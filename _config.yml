@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Hongjiao Qiang | Luming Lin | Youyou Zhang"
+  name             : "Hongjiao Qiang\nLuming Lin\nYouyou Zhang"
   avatar           : "profile.png"
   bio              : "Senior design project for Purdue University ECE major. An online immersive VR study space mimicing realistic study area"
   location         : "West Lafayette, IN"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/UniVRsity-SeniorDesign/UniVRsity"
+  github           : "UniVRsity-SeniorDesign/UniVRsity"
   google_plus      :
   keybase          :
   instagram        :
