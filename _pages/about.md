@@ -10,41 +10,62 @@ redirect_from:
 
 This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
 
-A data-driven personal website
+Problem Diagnosis
 ======
-Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+The global Covid-19 pandemic has imposed enormous restrictions on people’s daily life. One of the most noteworthy limitations is the difficulty to gather in a public area for completing essential daily tasks. Among all, college students are a major group inevitably influenced, deprived of the opportunity to participate in various group events such as in-person classes, group discussions, and team projects. As a result, multiple successful solutions, such as Zoom, Webex, etc. arose in the past year aiming to bridge students over physical limitations when studying from home. These solutions offer students the chance to avoid getting infected by the disease and save time on commuting. However, there are also certain deficiencies for these existing platforms: the plain meeting interface lacks the learning atmosphere, and students lose their chance to demonstrate by sketching on whiteboards. A solution is urgently needed to merge the advantages of the in-person campus experience and distanced learning style into one platform/software. 
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over -- just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
-
-Getting started
+Proposed Solution
 ======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+In this project, we propose a virtual workspace uniquely built for students bringing spatial presence and immersive experience which cannot be achieved in online meetings and providing a personalized study environment with limitless space which cannot be achieved in real life.
 
-Site-wide configuration
+Minimum functionalities
 ------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+Lobby: After logging into the platform, users will find themselves inside a big lobby where everyone can talk, socialize and explore. There will be two huge portals displayed on the wall, teleporting users to either a private dorm or a public space. The users can use the joystick on the controller to walk to the portal after they decide where to go. 
+Personal Room/Dorm:  If users enjoy being alone, they can enter their private dorm room, where they focus on personal work without being distracted. Users will have a toolbar surrounding them where they can choose to spawn tools like a whiteboard in different sizes for sketching thoughts, sticky notes for brainstorming or taking a quick note, or multiple browsers/remote desktop windows from a real personal computer to the virtual dorm space. The most amazing thing is that users can drag and relocate all these tools to wherever they want without any real-world physics limitations.
+Public study room: If users enjoy studying with others or need a space for group meetings, they can enter the public study room, where dozens of tables are provided. Users can sit around a table and spawn tools visible either to everyone for discussions, or only to themselves for personal work. Just like in a real study space, users can hear the voice from nearby tables. Users are free to mute others if they prefer a quiet environment or to mute their table to others if they prefer private conversation. Other users can request to join a table/discussion if they want to see the contents of a specific table. In this way, users can control their privacy while experiencing a real study room environment. 
 
-Create content & metadata
+Implementation Plan
 ------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+On the hardware side, we will use Oculus Quest 1 or 2. This is because we already own these devices and Oculus Quest is a competitive product that has various advantages such as affordable prices, no cables required, lightweight, sharp display with high refresh rate, powerful processor, accurate motion tracking capability, and real-time debugging functionality with additional cables. It also has disadvantages such as short battery life. However, short battery life is a common issue to have for all standalone head-mounted display devices, and Oculus stated that it should last for several hours between charges, which is our expected user’s usage time. We also expect the future generations of Oculus devices to have a better battery life due to a rising market in VR/AR.
+On the software side, the Oculus website recommends Unreal Engine and Unity3D Game Engine as development platforms. We will be mainly working with Unity Game Engine with C# language, since Unity3D has a built-in library specifically developed for the Oculus application, and it is easier to learn Unity than to learn Unreal Engine.
+Since our project requires a multiplayer feature, we will choose Photon PUN as a network solution. Photon is a relatively mature networking product aiming to make the multiplayer development process a lot easier. Additionally, PUN (Photon Unity Networking) is a wrapper for different layers, and it is designed for Unity, which means its documentation is suitable for Unity development. Its wrapper characteristic implies possible customizations for each layer from the low level of protocols, mid-layer of callbacks and working with Photon servers, and high level of Unity-specific features such as Unity object’s add-on and RPC calls, etc.
+With the help from the above 3 tools, we should be able to achieve the minimum functionalities that we promised. We may use other tools to develop the possible additional functionalities in the future.
 
-**Markdown generator**
-
-I have also created [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the academicpages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
-
-How to edit your site's GitHub repository
+Possible Stretch Goal
 ------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+Friend/contact system: Users can add anyone they meet either in any study area or social event to their friends’ list and a message system will be provided for communications. Users can invite friends to private dorm rooms for shared work or recreation experiences.
+Reward points and customizable elements: Users will be given reward points according to their time spent studying in our system. The reward points can be used to redeem virtual room decorations and apparel. The room can be set up in whatever way the user/event host wants it to be to guarantee an experience with the highest degree of freedom, immersiveness, and creativity.
+Speech room: There will be a speech room for users to host speech events, practice presentations, or have classes. 
+Entertainments: There are also entertainments offered on our platform if users feel tired of studying. The planned entertainments contain movie theatres and game centres. The users will need to consume their rewarded points to enjoy entertainment activities.
+Social event system: If users want to make new friends, or participate in others’ academic activities, there will be a social event system posting all the social events that are happening on the virtual campus. They can see a list of ongoing or upcoming social events with different topics along with related details. Social events will contain movie nights, public speeches, academic discussions, and networking events.
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+Market Analysis
+======
+Our product is intended to be used by college students who suffer restrictions on attending a physical campus for group studying or those who tend to try a new mode of studying in VR that fuses multiple virtual but interactive elements. Students will have a few options: they can either study in an enclosed, individual and customizable room to avoid distractions; or they can gather with groups in a public study lounge for discussion and teamwork. There are more attractive functionalities such as friend/social system, entertainment, and speech events to be developed on the platform.
 
-For more info
-------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+Commercial Product Analysis
+======
+Immersed [1][2] is an example of VR platforms that offer an immersive virtual working experience. It has two distinct modes: solo and collaboration. In solo mode, the user works in a private workspace that eliminates distractions and supports up to 5 virtual monitors. This feature enables the user to largely enhance productivity without investing in additional hardware such as physical monitors. In the collaboration mode, more than 4 people can join the user’s room for synchronous collaboration. In this room, users can share multiple screens and access a shared whiteboard.
+
+vSpatial [3][4] is another example of VR workspace products. It offers a shared workspace for all co-workers. It has full integration with Slack workspace so that all the channels and contacts are available during working. It can access all the programs running on the computer and share them within the virtual workspace. There is spatial audio integrated into the meeting environment, which makes all users feel like in a physical room.
+
+Compared to the state-of-the-art products listed above, our solution focuses more on building a study environment for students and teachers. For example, besides the personal study room which is similar to that in Immersed, we proposed the public study room to create a real-life study atmosphere to help students focus on their work. Moreover, we proposed the speech room to give both the teachers and students an in-person course experience, which is missing from the products listed above. In the speech room, students can whisper with one another, teachers can stand by a podium and see students raising their hands. Thus, although there are already several competitors and mature products in the market, our product still stands out with its unique functions and specifically targeted customers. 
+
+Component Diagram
+======
+
+OSS Components Used
+======
+Meta Avatars SDK
+a.Using the Meta Avatars SDK, users can create their own appearances to increase social presence and enhance VR immersion.
+b.Link: https://developer.oculus.com/documentation/unity/meta-avatars-overview/
+Unity Asset Store
+a.Asset Store provides various premade assets such as texture and objects to fit our needs when building the scene.
+b.Link: https://assetstore.unity.com/
+
+Related Sources
+======
+1. https://immersed.com/
+2. https://www.xrtoday.com/virtual-reality/immersedvr-review/
+3. https://www.vspatial.com/
+4. https://ryanschultz.com/2019/08/13/vspatial-a-brief-introduction-yet-another-remote-workteams-vr-platform/
